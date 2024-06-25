@@ -51,24 +51,24 @@
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jButton4" min="-2" pref="137" max="-2" attributes="0"/>
+                          <Component id="pago" min="-2" pref="137" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                          <Component id="jButton9" max="32767" attributes="0"/>
+                          <Component id="tarea" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton2" max="32767" attributes="0"/>
-                              <Component id="jButton1" max="32767" attributes="0"/>
+                              <Component id="citas" max="32767" attributes="0"/>
+                              <Component id="carrito" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ingreso" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jButton7" pref="134" max="32767" attributes="0"/>
-                              <Component id="jButton6" max="32767" attributes="0"/>
-                              <Component id="jButton8" max="32767" attributes="0"/>
+                              <Component id="producto" pref="134" max="32767" attributes="0"/>
+                              <Component id="pedido" max="32767" attributes="0"/>
+                              <Component id="registro" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -81,23 +81,23 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton6" pref="41" max="32767" attributes="0"/>
-                      <Component id="jButton1" max="32767" attributes="0"/>
+                      <Component id="pedido" pref="41" max="32767" attributes="0"/>
+                      <Component id="carrito" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="jButton7" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="citas" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="producto" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="ingreso" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="registro" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton4" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jButton9" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="pago" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="tarea" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="196" max="32767" attributes="0"/>
               </Group>
@@ -105,48 +105,69 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="carrito">
           <Properties>
             <Property name="text" type="java.lang.String" value="Carrito"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carritoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="citas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Citas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="citasActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="ingreso">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingreso de Producto"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ingresoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="pago">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pagos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="pedido">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pedidos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pedidoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="producto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Productos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="productoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="registro">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registro"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registroActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton9">
+        <Component class="javax.swing.JButton" name="tarea">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tareas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tareaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
