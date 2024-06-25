@@ -75,6 +75,11 @@ public class VistaRegistro extends javax.swing.JFrame {
 
         btnCrearCuenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCrearCuenta.setText("Crear Cuenta");
+        btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearCuentaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Usuario");
@@ -84,6 +89,11 @@ public class VistaRegistro extends javax.swing.JFrame {
 
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Confirmar Contraseña");
 
@@ -197,6 +207,18 @@ public class VistaRegistro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        VistaLogin vistaLogin = new VistaLogin();
+        this.setVisible(false);
+        vistaLogin.setVisible(true);
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
+        VistaLogin vistaLogin = new VistaLogin();
+        this.setVisible(false);
+        vistaLogin.setVisible(true);
+    }//GEN-LAST:event_btnCrearCuentaActionPerformed
 
     /**
      * @param args the command line arguments
