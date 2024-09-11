@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vistas;
-
+import Controlador.ControladorEstadoCompra;
+import Modelo.ModeloEstadoCompra;
 /**
  *
  * @author sebas
@@ -15,6 +16,9 @@ public class VistaEstadoCompra extends javax.swing.JFrame {
      */
     public VistaEstadoCompra() {
         initComponents();
+        ModeloEstadoCompra modelo = new ModeloEstadoCompra(this);
+        ControladorEstadoCompra controlador = new ControladorEstadoCompra(modelo);
+        setControladorEstadoCompra(controlador);
     }
 
     /**
@@ -249,6 +253,17 @@ public class VistaEstadoCompra extends javax.swing.JFrame {
                 new VistaEstadoCompra().setVisible(true);
             }
         });
+    }
+    
+    private void setControladorEstadoCompra(ControladorEstadoCompra controlador){
+        btnActualizarEstado.addActionListener(controlador);
+        btnBuscarEstado.addActionListener(controlador);
+        btnBorrarEstado.addActionListener(controlador);
+        btnCancelarBusquedaEstado.addActionListener(controlador);
+        btnLimpiarCamposEstado.addActionListener(controlador);
+        btnGuardarEstado.addActionListener(controlador);
+        tblEstadoCompra.addMouseListener(controlador);
+        this.addWindowListener(controlador);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
