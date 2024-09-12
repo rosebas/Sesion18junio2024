@@ -10,9 +10,9 @@ public class Conector {
     
     private static final String CLASE  = "com.mysql.jdbc.Driver";
     private final String HOST = "sql.freedb.tech";
-    private final String USUARIO = "freedb_elBananero";
-    private final String CLAVE = "8$AKE@t!p45XrDJ";
-    private final String BASEDATOS = "freedb_Jardines";
+    private final String USUARIO = "freedb_Momosteco_1";
+    private final String CLAVE = "d6QKhUVceR$M!dN";
+    private final String BASEDATOS = "freedb_POWERTECH_DB";
     private final String URL;
     
     private Connection link;
