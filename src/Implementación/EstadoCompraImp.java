@@ -54,7 +54,6 @@ public class EstadoCompraImp implements IEstadoCompra {
         boolean resultado = true;
         conector.conectar();
 
-
         return false;
     }
 
@@ -65,17 +64,17 @@ public class EstadoCompraImp implements IEstadoCompra {
         conector.conectar();
 
         try {
-            ps = conector.preparar(sql.getACTUALIZAR_ESTADO_COMPRA());
+            ps = conector.preparar(sql.getCONSULTAR_ESTADOS_COMPRAS());
             rs = ps.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 modelo.addRow(new Object[]{
                     rs.getString("codigo"),
                     rs.getString("descripcion")
                 });
             }
             conector.desconectar();
-            
+
         } catch (SQLException ex) {
             conector.mensaje(ex.getMessage(), "Error", 1);
             conector.desconectar();
@@ -85,12 +84,51 @@ public class EstadoCompraImp implements IEstadoCompra {
 
     @Override
     public DefaultTableModel modeloEstadoCompra(int idEstado) {
-        return null;
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.setColumnIdentifiers(new Object[]{"Codigo", "Descripcion"});
+        conector.conectar();
+
+        try {
+            ps = conector.preparar(sql.getCONSULTAR_ESTADOS_COMPRAS());
+            ps.setInt(1, idEstado);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                modelo.addRow(new Object[]{
+                    rs.getString("codigo"),
+                    rs.getString("descripcion")
+                });
+            }
+            conector.desconectar();
+
+        } catch (SQLException ex) {
+            conector.mensaje(ex.getMessage(), "Error", 1);
+            conector.desconectar();
+        }
+        return modelo;
     }
 
     @Override
     public ModeloEstadoCompra mostrarEstadoCompra(int idEstado) {
-        return null;
+        ModeloEstadoCompra modelo = new ModeloEstadoCompra();
+        conector.conectar();
+
+        try {
+            ps = conector.preparar(sql.getCONSULTAR_ESTADO_COMPRA());
+            ps.setInt(1, idEstado);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                modelo.setIdEstado(Integer.parseInt(rs.getString(1)));
+                modelo.setEstado(rs.getString(2));
+            }
+            conector.desconectar();
+            
+        } catch (SQLException ex) {
+            conector.mensaje(ex.getMessage(), "Error", 1);
+            conector.desconectar();
+        }
+        return modelo;
     }
 
 }
