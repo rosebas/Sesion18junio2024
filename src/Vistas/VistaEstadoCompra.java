@@ -33,7 +33,7 @@ public class VistaEstadoCompra extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscarCodigo = new javax.swing.JTextField();
         btnBuscarEstado = new javax.swing.JButton();
         btnCancelarBusquedaEstado = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -67,7 +67,7 @@ public class VistaEstadoCompra extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBuscarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBuscarEstado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -80,7 +80,7 @@ public class VistaEstadoCompra extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBuscarEstado)
                         .addComponent(btnCancelarBusquedaEstado))
                     .addComponent(jLabel3))
@@ -281,8 +281,8 @@ public class VistaEstadoCompra extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextField jTextField1;
     public javax.swing.JTable tblEstadoCompra;
+    public javax.swing.JTextField txtBuscarCodigo;
     public javax.swing.JTextField txtCodigoEstado;
     public javax.swing.JTextField txtEstadoEstado;
     // End of variables declaration//GEN-END:variables

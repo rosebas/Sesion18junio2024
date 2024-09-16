@@ -17,10 +17,23 @@ public class ControladorEstadoCompra implements ActionListener, WindowListener, 
         this.modelo = modelo;
     }
     
-    
-    
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getActionCommand().equals(modelo.getVista().btnBuscarEstado.getActionCommand())){
+            if(modelo.getVista().txtBuscarCodigo.equals("")){
+                modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+            }else{
+                modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+                mostrarCliente();
+            }
+        }
+            
+    }
+    
+    public void mostrarCliente(){
+        ModeloEstadoCompra model = implementacion.mostrarEstadoCompra(Integer.parseInt(modelo.getVista().txtBuscarCodigo.getText()));
+        modelo.getVista().txtCodigoEstado.setText(String.valueOf(model.getIdEstado()));
+        modelo.getVista().txtEstadoEstado.setText(model.getEstado());
     }
 
     @Override

@@ -84,7 +84,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="txtBuscarCodigo" min="-2" pref="242" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnBuscarEstado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -99,7 +99,7 @@
                       <EmptySpace pref="38" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtBuscarCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBuscarEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCancelarBusquedaEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -116,7 +116,7 @@
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="txtBuscarCodigo">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
