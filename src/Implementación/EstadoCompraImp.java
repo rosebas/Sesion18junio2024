@@ -1,9 +1,96 @@
 package Implementación;
+
 import Modelo.ModeloEstadoCompra;
 import Interfaces.IEstadoCompra;
 import SQL.Conector;
 import SQL.QuerysEstadoCompra;
+import javax.swing.table.DefaultTableModel;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class EstadoCompraImp {
-    
+public class EstadoCompraImp implements IEstadoCompra {
+
+    Conector conector = new Conector();
+    QuerysEstadoCompra sql = new QuerysEstadoCompra();
+    PreparedStatement ps;
+    ResultSet rs;
+
+    @Override
+    public boolean insertarEstadoCompra(ModeloEstadoCompra modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getINSERTAR_ESTADO_COMPRA());
+
+        try {
+            ps.setInt(1, modelo.getIdEstado());
+            ps.setString(2, modelo.getEstado());
+            return ps.execute();
+        } catch (SQLException ex) {
+            conector.mensaje("Error en la insersción", "Error", 1);
+            return resultado;
+        }
+    }
+
+    @Override
+    public boolean eliminarEstadoCompra(String codigoEstado) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getBORRAR_ESTADO_COMPRA());
+
+        try {
+            ps.setInt(1, Integer.parseInt(codigoEstado));
+            return ps.execute();
+        } catch (SQLException ex) {
+            conector.mensaje("Error al eliminar", "Error", 1);
+            return resultado;
+        }
+    }
+
+    @Override
+    public boolean actualizarEstadoCompra(ModeloEstadoCompra modelo) {
+        boolean resultado = true;
+        conector.conectar();
+
+
+        return false;
+    }
+
+    @Override
+    public DefaultTableModel modeloEstadoCompra() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.setColumnIdentifiers(new Object[]{"Codigo", "Descripcion"});
+        conector.conectar();
+
+        try {
+            ps = conector.preparar(sql.getACTUALIZAR_ESTADO_COMPRA());
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                modelo.addRow(new Object[]{
+                    rs.getString("codigo"),
+                    rs.getString("descripcion")
+                });
+            }
+            conector.desconectar();
+            
+        } catch (SQLException ex) {
+            conector.mensaje(ex.getMessage(), "Error", 1);
+            conector.desconectar();
+        }
+        return modelo;
+    }
+
+    @Override
+    public DefaultTableModel modeloEstadoCompra(int idEstado) {
+        return null;
+    }
+
+    @Override
+    public ModeloEstadoCompra mostrarEstadoCompra(int idEstado) {
+        return null;
+    }
+
 }
