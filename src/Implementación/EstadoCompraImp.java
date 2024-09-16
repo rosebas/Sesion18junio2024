@@ -60,7 +60,7 @@ public class EstadoCompraImp implements IEstadoCompra {
     @Override
     public DefaultTableModel modeloEstadoCompra() {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new Object[]{"Codigo", "Descripcion"});
+        modelo.setColumnIdentifiers(new Object[]{"Codigo", "estado"});
         conector.conectar();
 
         try {
@@ -69,8 +69,8 @@ public class EstadoCompraImp implements IEstadoCompra {
 
             while (rs.next()) {
                 modelo.addRow(new Object[]{
-                    rs.getString("codigo"),
-                    rs.getString("descripcion")
+                    rs.getString("id_estado"),
+                    rs.getString("estado")
                 });
             }
             conector.desconectar();
@@ -95,13 +95,14 @@ public class EstadoCompraImp implements IEstadoCompra {
 
             while (rs.next()) {
                 modelo.addRow(new Object[]{
-                    rs.getString("codigo"),
-                    rs.getString("descripcion")
+                    rs.getString("id_estado"),
+                    rs.getString("estado")
                 });
             }
             conector.desconectar();
 
         } catch (SQLException ex) {
+            conector.mensaje("trono aqui", "error", 1);
             conector.mensaje(ex.getMessage(), "Error", 1);
             conector.desconectar();
         }

@@ -23,7 +23,7 @@ public class ControladorEstadoCompra implements ActionListener, WindowListener, 
             if(modelo.getVista().txtBuscarCodigo.equals("")){
                 modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
             }else{
-                modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+                modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra(Integer.parseInt(modelo.getVista().txtBuscarCodigo.getText())));
                 mostrarCliente();
             }
         }
@@ -58,6 +58,9 @@ public class ControladorEstadoCompra implements ActionListener, WindowListener, 
 
     @Override
     public void windowOpened(WindowEvent e) {
+        if(e.getComponent().equals(modelo.getVista())){
+            modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+        }
     }
 
     @Override

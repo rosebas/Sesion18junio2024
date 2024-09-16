@@ -1,13 +1,13 @@
 package SQL;
 
 public class QuerysEstadoCompra {
-    private final String INSERTAR_ESTADO_COMPRA = "INSERT INTO estado_compra(codigo, nombre)"
-            + "VALUES (?,?)";
-    private final String ACTUALIZAR_ESTADO_COMPRA = "UPDATE estado_compra SET(?,?) WHERE codigo = ?";
-    private final String BORRAR_ESTADO_COMPRA = "DELETE FROM estado_compra WHERE codigo = ?";
+    private final String INSERTAR_ESTADO_COMPRA = "INSERT INTO estado_compra(id_estado, estado)"
+            + "VALUES (?, ?)";
+    private final String ACTUALIZAR_ESTADO_COMPRA = "UPDATE estado_compra SET(?, ?) WHERE id_estado = ?";
+    private final String BORRAR_ESTADO_COMPRA = "DELETE FROM estado_compra WHERE id_estado = ?";
     private final String CONSULTAR_ESTADOS_COMPRAS = "SELECT * FROM estado_compra";
-    private final String CONSULTAR_ESTADO_COMPRA = "SELECT codigo, descripcion FROM estado_compra WHERE"
-            + "codigo = ?";
+    private final String CONSULTAR_ESTADO_COMPRA = "SELECT id_estado, nombre FROM estado_compra WHERE"
+            + "id_estado = ?";
   
     public String getINSERTAR_ESTADO_COMPRA() {
         return INSERTAR_ESTADO_COMPRA;
