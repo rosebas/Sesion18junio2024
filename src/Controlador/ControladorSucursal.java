@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Implementación.SucursalImp;
 import Modelo.ModeloSucursal;
 
 /**
@@ -12,5 +13,8 @@ import Modelo.ModeloSucursal;
  */
 public class ControladorSucursal {
      ModeloSucursal sucursal;
-   
-}
+    SucursalImp implementacion = new SucursalImp();
+
+    public ControladorSucursal(ModeloSucursal sucursal) {
+        this.sucursal = sucursal;
+    }
