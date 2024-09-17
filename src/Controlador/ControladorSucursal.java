@@ -12,6 +12,6 @@ import Modelo.ModeloSucursal;
  */
 public class ControladorSucursal {
      public ControladorSucursal(ModeloSucursal sucursal) {
-       
+        
 }
 }
