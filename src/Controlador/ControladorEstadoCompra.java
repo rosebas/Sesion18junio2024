@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JOptionPane;
 
 public class ControladorEstadoCompra implements ActionListener, WindowListener, MouseListener{
 
@@ -20,12 +21,63 @@ public class ControladorEstadoCompra implements ActionListener, WindowListener, 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals(modelo.getVista().btnBuscarEstado.getActionCommand())){
-            if(modelo.getVista().txtBuscarCodigo.equals("")){
+            if(modelo.getVista().txtBuscarCodigo.getText().equals("")){
                 modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
             }else{
                 modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra(Integer.parseInt(modelo.getVista().txtBuscarCodigo.getText())));
                 mostrarCliente();
             }
+        } else if(e.getActionCommand().equals(modelo.getVista().btnGuardarEstado.getActionCommand())){
+            boolean resultado;
+            ModeloEstadoCompra modelo = new ModeloEstadoCompra();
+            modelo.setIdEstado(Integer.parseInt(this.modelo.getVista().txtCodigoEstado.getText()));
+            modelo.setEstado(this.modelo.getVista().txtEstadoEstado.getText());
+            resultado = implementacion.insertarEstadoCompra(modelo);
+            if(!resultado){
+                System.out.println("Inserción exitosa");
+                limpiar();
+                modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+            }else{
+                System.out.println("Inserción falló");
+            }
+            
+        } else if(e.getActionCommand().equals(modelo.getVista().btnBorrarEstado.getActionCommand())){
+            boolean resultado;
+            if(modelo.getVista().txtCodigoEstado.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Error", "Datos no válidos", 1);
+            }else{
+                resultado = implementacion.eliminarEstadoCompra(modelo.getVista().txtCodigoEstado.getText());
+                if(!resultado){
+                    System.out.println("Eliminación exitosa");
+                    limpiar();
+                    modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+                }else{
+                    System.out.println("Problemas al eliminar");
+                }
+            }
+            
+        } else if(e.getActionCommand().equals(modelo.getVista().btnActualizarEstado.getActionCommand())){
+            boolean resultado;
+            if(modelo.getVista().txtCodigoEstado.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Error", "Datos no válidos", 1);
+            }else{
+                ModeloEstadoCompra modelo = new ModeloEstadoCompra();
+                modelo.setIdEstado(Integer.parseInt(this.modelo.getVista().txtCodigoEstado.getText()));
+                modelo.setEstado(this.modelo.getVista().txtEstadoEstado.getText());
+                resultado = implementacion.actualizarEstadoCompra(modelo);
+                if(!resultado){
+                    System.out.println("Actualización exitosa");
+                    limpiar();
+                    modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+                }else{
+                    System.out.println("Actualización fallida");
+                }
+            }
+        } else if(e.getActionCommand().equals(modelo.getVista().btnCancelarBusquedaEstado.getActionCommand())){
+            limpiar();
+            modelo.getVista().tblEstadoCompra.setModel(implementacion.modeloEstadoCompra());
+        } else if(e.getActionCommand().equals(modelo.getVista().btnLimpiarCamposEstado.getActionCommand())){
+            limpiar();
         }
             
     }
@@ -35,9 +87,18 @@ public class ControladorEstadoCompra implements ActionListener, WindowListener, 
         modelo.getVista().txtCodigoEstado.setText(String.valueOf(model.getIdEstado()));
         modelo.getVista().txtEstadoEstado.setText(model.getEstado());
     }
+    
+    public void limpiar(){
+        modelo.getVista().txtBuscarCodigo.setText("");
+        modelo.getVista().txtEstadoEstado.setText("");
+        modelo.getVista().txtCodigoEstado.setText("");
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        if(e.getComponent().equals(modelo.getVista().tblEstadoCompra)){
+            modelo.getVista().txtBuscarCodigo.setText(String.valueOf(modelo.getVista().tblEstadoCompra.getValueAt(modelo.getVista().tblEstadoCompra.getSelectedRow(), 0)));
+        }
     }
 
     @Override

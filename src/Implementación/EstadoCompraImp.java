@@ -38,10 +38,11 @@ public class EstadoCompraImp implements IEstadoCompra {
     public boolean eliminarEstadoCompra(String codigoEstado) {
         boolean resultado = true;
         conector.conectar();
-        ps = conector.preparar(sql.getBORRAR_ESTADO_COMPRA());
 
         try {
+            ps = conector.preparar(sql.getBORRAR_ESTADO_COMPRA());
             ps.setInt(1, Integer.parseInt(codigoEstado));
+            System.out.println(ps);
             return ps.execute();
         } catch (SQLException ex) {
             conector.mensaje("Error al eliminar", "Error", 1);
@@ -53,8 +54,16 @@ public class EstadoCompraImp implements IEstadoCompra {
     public boolean actualizarEstadoCompra(ModeloEstadoCompra modelo) {
         boolean resultado = true;
         conector.conectar();
-
-        return false;
+        ps = conector.preparar(sql.getACTUALIZAR_ESTADO_COMPRA());
+        
+        try {
+            ps.setString(1, modelo.getEstado());
+            ps.setInt(2, modelo.getIdEstado());
+            resultado = ps.execute();
+        } catch (SQLException ex) {
+            conector.mensaje(ex.getMessage(), "Error al actualizar", 1);
+        }
+        return resultado;
     }
 
     @Override
@@ -65,6 +74,7 @@ public class EstadoCompraImp implements IEstadoCompra {
 
         try {
             ps = conector.preparar(sql.getCONSULTAR_ESTADOS_COMPRAS());
+            System.out.println(ps);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -89,8 +99,9 @@ public class EstadoCompraImp implements IEstadoCompra {
         conector.conectar();
 
         try {
-            ps = conector.preparar(sql.getCONSULTAR_ESTADOS_COMPRAS());
+            ps = conector.preparar(sql.getCONSULTAR_ESTADO_COMPRA());
             ps.setInt(1, idEstado);
+            System.out.println(ps);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -117,14 +128,15 @@ public class EstadoCompraImp implements IEstadoCompra {
         try {
             ps = conector.preparar(sql.getCONSULTAR_ESTADO_COMPRA());
             ps.setInt(1, idEstado);
+            System.out.println(ps);
             rs = ps.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 modelo.setIdEstado(Integer.parseInt(rs.getString(1)));
                 modelo.setEstado(rs.getString(2));
             }
             conector.desconectar();
-            
+
         } catch (SQLException ex) {
             conector.mensaje(ex.getMessage(), "Error", 1);
             conector.desconectar();
