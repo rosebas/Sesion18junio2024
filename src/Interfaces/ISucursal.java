@@ -4,10 +4,18 @@
  */
 package Interfaces;
 
+import Modelo.ModeloSucursal;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author javie
  */
 public interface ISucursal {
-    
+     public boolean insertarCliente(ModeloSucursal modelo);
+     public boolean eliminarSucursal(String codigo);
+      public DefaultTableModel modeloSucursal();
+      public DefaultTableModel modeloSucursal(int codigo_cliente);
+       public ModeloSucursal mostrarCliente(int codigo_cliente);
 }

@@ -10,7 +10,8 @@ package SQL;
  */
 public class QuerysSucursal {
  private final String CONSULTA_SUCURSAL = "SELECT * FROM sucursal";
-    private final String CONSULTA_SUCURSAL_CODIGO = "SELECT * FROM sucursal WHERE codigo_sucursal = ?";
+  private final String CONSULTA_SUCURSAL_CODIGO = "SELECT * FROM cliente WHERE id_sucursal = ?";
+            
     private final String INSERTAR_SUCURSAL = "INSERT INTO sucursal VALUES(?,?,?,?)";
     private final String ELIMINAR_SUCURSAL = "DELETE FROM sucursal WHERE codigo_sucursal = ?";
 

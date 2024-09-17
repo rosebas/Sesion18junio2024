@@ -4,7 +4,9 @@
  */
 package Controlador;
 
+import Implementación.SucursalImp;
 import Modelo.ModeloSucursal;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -14,4 +16,28 @@ public class ControladorSucursal {
      public ControladorSucursal(ModeloSucursal sucursal) {
         
 }
-}
+     
+      ModeloSucursal modelo;
+    SucursalImp implementacion = new SucursalImp();
+    public void actionPerformed(ActionEvent e){
+         if (e.getActionCommand().equals(modelo.getVistaSucursal().btnBuscar.getActionCommand())) {
+            if (modelo.getVistaSucursal().txtCodigo.getText().equals("")) {
+               modelo.getVistaSucursal().tblDatos.setModel(implementacion.modeloSucursal());
+            } else {
+            modelo.getVistaSucursal().tblDatos.setModel(implementacion.modeloSucursal(Integer.parseInt(modelo.getVistaSucursal().txtCodigo.getText())));
+                mostrarSucursal();
+            }
+    }
+
+         
+    }
+     public void mostrarSucursal() {
+       ModeloSucursal model = implementacion.mostrarCliente(Integer.parseInt(modelo.getVistaSucursal().txtCodigo.getText()));
+        modelo.getVistaSucursal().txtCodigoSucursal.setText(String.valueOf(model.getCodigo_sucursal()));
+        modelo.getVistaSucursal().txtDepartamento.setText(model.getDepartamento());
+        modelo.getVistaSucursal().txtRegion.setText(model.getRegion());
+        modelo.getVistaSucursal().txtNombre.setText(model.getNombre());
+       
+       
+    }
+    }

@@ -15,7 +15,8 @@ public class ModeloSucursal {
     private String departamento;
     private String region;
     private String nombre;
-    private VistaSucursal sucursal;
+    private VistaSucursal VistaSucursal;
+
 
     public int getCodigo_sucursal() {
         return codigo_sucursal;
@@ -49,13 +50,15 @@ public class ModeloSucursal {
         this.nombre = nombre;
     }
 
-    public VistaSucursal getSucursal() {
-        return sucursal;
+    public VistaSucursal getVistaSucursal() {
+        return VistaSucursal;
     }
 
-    public void setSucursal(VistaSucursal sucursal) {
-        this.sucursal = sucursal;
+    public void setVistaSucursal(VistaSucursal VistaSucursal) {
+        this.VistaSucursal = VistaSucursal;
     }
+
+  
     
     
     

@@ -28,13 +28,13 @@ public class VistaSucursal extends javax.swing.JFrame {
 
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtCodigoCliente = new javax.swing.JTextField();
+        txtCodigoSucursal = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtNombreCliente = new javax.swing.JTextField();
+        txtDepartamento = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtNombreContacto = new javax.swing.JTextField();
+        txtRegion = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtApellidoContacto = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
@@ -78,19 +78,19 @@ public class VistaSucursal extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigoCliente))
+                        .addComponent(txtCodigoSucursal))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreCliente))
+                        .addComponent(txtDepartamento))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreContacto))
+                        .addComponent(txtRegion))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtApellidoContacto)))
+                        .addComponent(txtNombre)))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(btnGuardar)
@@ -108,19 +108,19 @@ public class VistaSucursal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodigoSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtNombreContacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtApellidoContacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(93, 93, 93)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
@@ -253,10 +253,10 @@ public class VistaSucursal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tblDatos;
-    public javax.swing.JTextField txtApellidoContacto;
     public javax.swing.JTextField txtCodigo;
-    public javax.swing.JTextField txtCodigoCliente;
-    public javax.swing.JTextField txtNombreCliente;
-    public javax.swing.JTextField txtNombreContacto;
+    public javax.swing.JTextField txtCodigoSucursal;
+    public javax.swing.JTextField txtDepartamento;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtRegion;
     // End of variables declaration//GEN-END:variables
 }
