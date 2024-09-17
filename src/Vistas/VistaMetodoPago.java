@@ -32,16 +32,16 @@ public class VistaMetodoPago extends javax.swing.JFrame {
         txtCodigoMetodoPago = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancear = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtCodigoPago = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtMetodo = new javax.swing.JTextField();
-        txtGuardar = new javax.swing.JButton();
-        txtActualizar = new javax.swing.JButton();
-        txtBorrar = new javax.swing.JButton();
-        txtLimpiar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         tblMetodoPago = new javax.swing.JScrollPane();
         tblEstadoCompra = new javax.swing.JTable();
@@ -65,10 +65,10 @@ public class VistaMetodoPago extends javax.swing.JFrame {
 
         btnBuscar.setText("Buscar");
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCancear.setText("Cancelar");
+        btnCancear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCancearActionPerformed(evt);
             }
         });
 
@@ -86,7 +86,7 @@ public class VistaMetodoPago extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(btnCancear))
                     .addComponent(txtCodigoMetodoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -100,7 +100,7 @@ public class VistaMetodoPago extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(btnCancear)
                     .addComponent(btnBuscar))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
@@ -111,13 +111,13 @@ public class VistaMetodoPago extends javax.swing.JFrame {
 
         jLabel4.setText("Metodo");
 
-        txtGuardar.setText("Guardar");
+        btnGuardar.setText("Guardar");
 
-        txtActualizar.setText("Actualizar");
+        btnActualizar.setText("Actualizar");
 
-        txtBorrar.setText("Borrar");
+        btnBorrar.setText("Borrar");
 
-        txtLimpiar.setText("Limpiar");
+        btnLimpiar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -131,18 +131,18 @@ public class VistaMetodoPago extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtGuardar)
+                                .addComponent(btnGuardar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtActualizar))
+                                .addComponent(btnActualizar))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtBorrar)
+                                .addComponent(btnBorrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -158,12 +158,12 @@ public class VistaMetodoPago extends javax.swing.JFrame {
                 .addComponent(txtMetodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtActualizar)
-                    .addComponent(txtGuardar))
+                    .addComponent(btnActualizar)
+                    .addComponent(btnGuardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBorrar)
-                    .addComponent(txtLimpiar))
+                    .addComponent(btnBorrar)
+                    .addComponent(btnLimpiar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -228,9 +228,9 @@ public class VistaMetodoPago extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCancearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCancearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,8 +268,12 @@ public class VistaMetodoPago extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnBorrar;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnCancear;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -280,12 +284,8 @@ public class VistaMetodoPago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     public javax.swing.JTable tblEstadoCompra;
     public javax.swing.JScrollPane tblMetodoPago;
-    private javax.swing.JButton txtActualizar;
-    private javax.swing.JButton txtBorrar;
-    private javax.swing.JTextField txtCodigoMetodoPago;
+    public javax.swing.JTextField txtCodigoMetodoPago;
     private javax.swing.JTextField txtCodigoPago;
-    private javax.swing.JButton txtGuardar;
-    private javax.swing.JButton txtLimpiar;
     private javax.swing.JTextField txtMetodo;
     // End of variables declaration//GEN-END:variables
 }
