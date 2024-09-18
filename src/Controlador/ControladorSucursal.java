@@ -35,7 +35,7 @@ public class ControladorSucursal implements ActionListener, WindowListener, Mous
                 modelo.getVista().tblDatos.setModel(implementacion.modeloSucursal());
             } else {
                 modelo.getVista().tblDatos.setModel(implementacion.modeloSucursal(Integer.parseInt(modelo.getVista().txtCodigo.getText())));
-                mostrarSucursal();
+              
             }
         }
 

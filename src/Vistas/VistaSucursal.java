@@ -9,7 +9,7 @@ import Controlador.ControladorSucursal;
  *
  * @author javie
  */
-public class VistaSucursal extends javax.swing.JFrame {
+public final class VistaSucursal extends javax.swing.JFrame {
 
     /**
      * Creates new form VistaSucursal
@@ -18,6 +18,8 @@ public class VistaSucursal extends javax.swing.JFrame {
         initComponents();
         ModeloSucursal modelo = new ModeloSucursal(this);
         ControladorSucursal controlador = new ControladorSucursal(modelo);
+        setControladorSucursal (controlador);
+
     }
 
     /**
@@ -240,7 +242,12 @@ public class VistaSucursal extends javax.swing.JFrame {
     }
     
     public void setControladorSucursal(ControladorSucursal controlador){
-        btnActualizar.addActionListener(controlador);
+       
+        
+        btnBuscar.addActionListener(controlador);
+        tblDatos.addMouseListener(controlador);
+        
+          this.addWindowListener(controlador);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -27,7 +27,7 @@ public class SucursalImp implements ISucursal{
         ModeloSucursal modelo = new ModeloSucursal();
         conector.conectar();
         try {
-            ps = conector.preparar(sql.getCONSULTA_SUCURSAL_CODIGO());
+            ps = conector.preparar(sql.getCONSULTA_SUCURSAL());
             ps.setInt(1, codigo_cliente);
             rs = ps.executeQuery();
             while (rs.next()) {
