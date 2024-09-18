@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vistas;
-
+import Modelo.ModeloSucursal;
+import Controlador.ControladorSucursal;
 /**
  *
  * @author javie
@@ -15,6 +16,8 @@ public class VistaSucursal extends javax.swing.JFrame {
      */
     public VistaSucursal() {
         initComponents();
+        ModeloSucursal modelo = new ModeloSucursal(this);
+        ControladorSucursal controlador = new ControladorSucursal(modelo);
     }
 
     /**
@@ -234,6 +237,10 @@ public class VistaSucursal extends javax.swing.JFrame {
                 new VistaSucursal().setVisible(true);
             }
         });
+    }
+    
+    public void setControladorSucursal(ControladorSucursal controlador){
+        btnActualizar.addActionListener(controlador);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

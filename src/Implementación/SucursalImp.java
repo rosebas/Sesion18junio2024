@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Implementación;
-
+import Interfaces.ISucursal;
 import Modelo.ModeloSucursal;
 import SQL.Conector;
 import SQL.QuerysSucursal;
@@ -16,10 +16,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author javie
  */
-public class SucursalImp {
+public class SucursalImp implements ISucursal{
     
     
-       Conector conector = new Conector();
+    Conector conector = new Conector();
     QuerysSucursal sql = new QuerysSucursal();
     PreparedStatement ps;
     ResultSet rs;
@@ -89,5 +89,15 @@ public class SucursalImp {
             conector.desconectar();
         }
         return modelo;
+    }
+
+    @Override
+    public boolean insertarCliente(ModeloSucursal modelo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean eliminarSucursal(String codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
