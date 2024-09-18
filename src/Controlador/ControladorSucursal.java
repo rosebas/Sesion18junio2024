@@ -5,6 +5,7 @@
 package Controlador;
 
 import Implementación.SucursalImp;
+import Modelo.ModeloEstadoCompra;
 import Modelo.ModeloSucursal;
 import java.awt.event.ActionEvent;
 
@@ -13,18 +14,20 @@ import java.awt.event.ActionEvent;
  * @author javie
  */
 public class ControladorSucursal {
-     public ControladorSucursal(ModeloSucursal sucursal) {
-        
-}
-     
+    public ControladorSucursal(ModeloSucursal modelo) {
+        this.modelo = modelo;
+    }
+  
+    
       ModeloSucursal modelo;
     SucursalImp implementacion = new SucursalImp();
+   
     public void actionPerformed(ActionEvent e){
          if (e.getActionCommand().equals(modelo.getVistaSucursal().btnBuscar.getActionCommand())) {
             if (modelo.getVistaSucursal().txtCodigo.getText().equals("")) {
                modelo.getVistaSucursal().tblDatos.setModel(implementacion.modeloSucursal());
             } else {
-            modelo.getVistaSucursal().tblDatos.setModel(implementacion.modeloSucursal(Integer.parseInt(modelo.getVistaSucursal().txtCodigo.getText())));
+           modelo.getVistaSucursal().tblDatos.setModel(implementacion.modeloSucursal(Integer.parseInt(modelo.getVistaSucursal().txtCodigo.getText())));
                 mostrarSucursal();
             }
     }

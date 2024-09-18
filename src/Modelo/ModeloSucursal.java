@@ -11,11 +11,11 @@ import Vistas.VistaSucursal;
  * @author javie
  */
 public class ModeloSucursal {
-    private int codigo_sucursal;
-    private String departamento;
-    private String region;
-    private String nombre;
-    private VistaSucursal VistaSucursal;
+    public int codigo_sucursal;
+    public String departamento;
+    public String region;
+    public String nombre;
+    public VistaSucursal VistaSucursal;
 
 
     public int getCodigo_sucursal() {

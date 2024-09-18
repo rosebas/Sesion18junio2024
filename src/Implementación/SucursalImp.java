@@ -54,7 +54,7 @@ public class SucursalImp {
             rs = ps.executeQuery();
             while (rs.next()) {
                 modelo.addRow(new Object[]{
-                    rs.getString("codigo_sucursal"),
+                    rs.getString("id_sucursal"),
                     rs.getString("departamento"),
                     rs.getString("region"),
                     rs.getString("nombre")});
